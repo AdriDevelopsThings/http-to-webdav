@@ -9,4 +9,5 @@ RUN pip install .
 
 COPY ./http_webdav ./http_webdav
 
+EXPOSE 80
 CMD ["gunicorn", "-b", "0.0.0.0:80", "http_webdav:app"]
