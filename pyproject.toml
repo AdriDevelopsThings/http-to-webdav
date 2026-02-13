@@ -1,0 +1,22 @@
+[project]
+name = "http-to-webdav"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "flask>=3.1.2",
+    "gunicorn>=25.1.0",
+    "mypy>=1.19.1",
+    "python-dotenv>=1.2.1",
+    "redis>=7.1.1",
+    "requests>=2.32.5",
+]
+
+[dependency-groups]
+dev = [
+    "types-requests>=2.32.4.20260107",
+]
+
+[tool.setuptools.packages.find]
+include = ["http_webdav*"]
