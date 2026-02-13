@@ -8,7 +8,7 @@ bp = Blueprint("api", __name__)
 
 
 @bp.route("/", defaults={"path": ""})
-@bp.route("/<path>")
+@bp.route("/<path:path>")
 def get(path: str):
     file = file_backend.get_file("/" + path)
     if file is None:
