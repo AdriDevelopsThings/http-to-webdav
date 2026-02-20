@@ -8,8 +8,8 @@ else:
     dotenv.load_dotenv()
 
 WEBDAV_HOST = environ["WEBDAV_HOST"]
-WEBDAV_USERNAME = environ.get("WEBDAV_USERNAME")
-WEBDAV_PASSWORD = environ.get("WEBDAV_PASSWORD")
+WEBDAV_USERNAME = environ["WEBDAV_USERNAME"]
+WEBDAV_PASSWORD = environ["WEBDAV_PASSWORD"]
 
 REDIS_URL = environ.get("REDIS_URL")
 REDIS_NAMESPACE = environ.get("REDIS_NAMESPACE", "http_webdav_")
