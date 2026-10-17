@@ -57,7 +57,12 @@ class Webdav:
     def request(self, webdav_path: str, headers: dict = {}) -> requests.Response:
         return requests.get(
             f"{self._webdav_host}{webdav_path}",
-            auth=(self._webdav_username, self._webdav_password),
+            auth=(
+                (self._webdav_username, self._webdav_password)
+                if self._webdav_username is not None
+                and self._webdav_password is not None
+                else None
+            ),
             headers=headers,
             stream=True,
             timeout=10,
